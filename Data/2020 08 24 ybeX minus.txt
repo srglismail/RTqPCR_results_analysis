@@ -1,0 +1,175 @@
+SDS 2.4	AQ Results	1.0
+Filename	24 08 2020 ybeX minus
+PlateID	
+Assay Type	Absolute Quantification
+Run DateTime	24.08.20 15:27:02
+Operator	
+ThermalCycleParams	
+
+Sample Information
+
+Well	Sample Name	Detector Name	Reporter	Task	Ct	Tm Value	Tm Type	Quantity	Qty Mean	Qty StdDev	Ct Median	Ct Mean	Ct StdDev	Ct Type	Template Name	Baseline Type	Baseline Start	Baseline Stop	Threshold Type	Threshold	FOS	HMD	LME	EW	BPR	NAW	HNS	HRN	EAF	BAF	TAF	CAF	
+28	B4	SYBR	SYBR	Unknown	21.934662	62.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335						true							
+29	B5	SYBR	SYBR	Unknown	21.486607	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+30	B6	SYBR	SYBR	Unknown	16.55948	89.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+31	B7	SYBR	SYBR	Unknown	22.195543	86.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+32	B8	SYBR	SYBR	Unknown	24.820017	91.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+33	B9	SYBR	SYBR	Unknown	25.35333	88.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+34	B10	SYBR	SYBR	Unknown	22.77799	87.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+35	B11	SYBR	SYBR	Unknown	22.247263	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+36	B12	SYBR	SYBR	Unknown	19.473083	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+37	B13	SYBR	SYBR	Unknown	32.99759	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+38	B14	SYBR	SYBR	Unknown	23.5715	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+39	B15	SYBR	SYBR	Unknown	20.293825	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+40	B16	SYBR	SYBR	Unknown	21.015545	83.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+52	C4	SYBR	SYBR	Unknown	21.235735	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+53	C5	SYBR	SYBR	Unknown	21.19719	88.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+54	C6	SYBR	SYBR	Unknown	16.671928	86.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+55	C7	SYBR	SYBR	Unknown	21.923374	84.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+56	C8	SYBR	SYBR	Unknown	25.05627	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+57	C9	SYBR	SYBR	Unknown	25.594378	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+58	C10	SYBR	SYBR	Unknown	22.737507	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+59	C11	SYBR	SYBR	Unknown	22.550547	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+60	C12	SYBR	SYBR	Unknown	19.408993	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+61	C13	SYBR	SYBR	Unknown	32.687286	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+62	C14	SYBR	SYBR	Unknown	23.61581	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+63	C15	SYBR	SYBR	Unknown	22.023108	88.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+64	C16	SYBR	SYBR	Unknown	21.255377	82.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+76	D4	SYBR	SYBR	Unknown	21.23163	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+77	D5	SYBR	SYBR	Unknown	21.16956	88.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+78	D6	SYBR	SYBR	Unknown	16.588766	86.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+79	D7	SYBR	SYBR	Unknown	Undetermined	62.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335						true			true				
+80	D8	SYBR	SYBR	Unknown	25.118855	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+81	D9	SYBR	SYBR	Unknown	25.490007	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+82	D10	SYBR	SYBR	Unknown	22.718958	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+83	D11	SYBR	SYBR	Unknown	22.575966	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+84	D12	SYBR	SYBR	Unknown	19.339613	85.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+85	D13	SYBR	SYBR	Unknown	33.493156	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+86	D14	SYBR	SYBR	Unknown	23.668598	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+87	D15	SYBR	SYBR	Unknown	22.328238	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+88	D16	SYBR	SYBR	Unknown	21.176092	82.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+124	F4	SYBR	SYBR	Unknown	21.26682	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+125	F5	SYBR	SYBR	Unknown	21.385202	88.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+126	F6	SYBR	SYBR	Unknown	17.054958	86.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+127	F7	SYBR	SYBR	Unknown	21.984425	84.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+128	F8	SYBR	SYBR	Unknown	25.653465	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+129	F9	SYBR	SYBR	Unknown	25.447401	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+130	F10	SYBR	SYBR	Unknown	22.816177	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+131	F11	SYBR	SYBR	Unknown	22.40407	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+132	F12	SYBR	SYBR	Unknown	19.497427	85.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+133	F13	SYBR	SYBR	Unknown	31.62389	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+134	F14	SYBR	SYBR	Unknown	23.955746	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+135	F15	SYBR	SYBR	Unknown	22.122757	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+136	F16	SYBR	SYBR	Unknown	21.456636	82.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+148	G4	SYBR	SYBR	Unknown	21.26742	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+149	G5	SYBR	SYBR	Unknown	21.395954	88.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+150	G6	SYBR	SYBR	Unknown	16.929384	86.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+151	G7	SYBR	SYBR	Unknown	21.939089	84.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+152	G8	SYBR	SYBR	Unknown	25.204754	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+153	G9	SYBR	SYBR	Unknown	25.511095	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+154	G10	SYBR	SYBR	Unknown	22.916006	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+155	G11	SYBR	SYBR	Unknown	22.516888	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+156	G12	SYBR	SYBR	Unknown	19.500864	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+157	G13	SYBR	SYBR	Unknown	27.691988	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+158	G14	SYBR	SYBR	Unknown	23.942125	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+159	G15	SYBR	SYBR	Unknown	22.08559	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+160	G16	SYBR	SYBR	Unknown	21.440178	82.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+172	H4	SYBR	SYBR	Unknown	21.480385	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+173	H5	SYBR	SYBR	Unknown	21.432129	88.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+174	H6	SYBR	SYBR	Unknown	16.783981	86.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+175	H7	SYBR	SYBR	Unknown	21.996183	84.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+176	H8	SYBR	SYBR	Unknown	25.25007	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+177	H9	SYBR	SYBR	Unknown	25.194405	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+178	H10	SYBR	SYBR	Unknown	22.852762	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+179	H11	SYBR	SYBR	Unknown	22.636898	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+180	H12	SYBR	SYBR	Unknown	19.449364	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+181	H13	SYBR	SYBR	Unknown	30.446857	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+182	H14	SYBR	SYBR	Unknown	23.81921	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+183	H15	SYBR	SYBR	Unknown	22.29188	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+184	H16	SYBR	SYBR	Unknown	18.030943	85.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335							true						
+220	J4	SYBR	SYBR	Unknown	21.750923	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+221	J5	SYBR	SYBR	Unknown	21.23064	88.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+222	J6	SYBR	SYBR	Unknown	17.438128	86.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+223	J7	SYBR	SYBR	Unknown	22.390213	84.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+224	J8	SYBR	SYBR	Unknown	25.746191	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+225	J9	SYBR	SYBR	Unknown	25.855236	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+226	J10	SYBR	SYBR	Unknown	22.87117	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+227	J11	SYBR	SYBR	Unknown	22.994278	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+228	J12	SYBR	SYBR	Unknown	19.863878	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+229	J13	SYBR	SYBR	Unknown	34.185028	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+230	J14	SYBR	SYBR	Unknown	24.107426	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+231	J15	SYBR	SYBR	Unknown	22.86023	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+232	J16	SYBR	SYBR	Unknown	21.784977	82.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+244	K4	SYBR	SYBR	Unknown	21.222267	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+245	K5	SYBR	SYBR	Unknown	21.227669	88.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+246	K6	SYBR	SYBR	Unknown	17.21708	86.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+247	K7	SYBR	SYBR	Unknown	22.238441	84.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+248	K8	SYBR	SYBR	Unknown	25.462172	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+249	K9	SYBR	SYBR	Unknown	25.875763	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+250	K10	SYBR	SYBR	Unknown	23.053654	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+251	K11	SYBR	SYBR	Unknown	23.154512	90.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+252	K12	SYBR	SYBR	Unknown	19.775509	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+253	K13	SYBR	SYBR	Unknown	32.596268	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+254	K14	SYBR	SYBR	Unknown	23.880495	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+255	K15	SYBR	SYBR	Unknown	22.758554	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+256	K16	SYBR	SYBR	Unknown	21.774925	82.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+268	L4	SYBR	SYBR	Unknown	21.35087	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+269	L5	SYBR	SYBR	Unknown	21.338186	88.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+270	L6	SYBR	SYBR	Unknown	16.934828	86.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+271	L7	SYBR	SYBR	Unknown	22.286211	84.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+272	L8	SYBR	SYBR	Unknown	25.600092	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+273	L9	SYBR	SYBR	Unknown	25.781654	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+274	L10	SYBR	SYBR	Unknown	23.169443	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+275	L11	SYBR	SYBR	Unknown	23.013744	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+276	L12	SYBR	SYBR	Unknown	19.731958	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+277	L13	SYBR	SYBR	Unknown	35.32196	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+278	L14	SYBR	SYBR	Unknown	24.017717	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+279	L15	SYBR	SYBR	Unknown	22.614101	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+280	L16	SYBR	SYBR	Unknown	21.769146	82.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+316	N4	SYBR	SYBR	Unknown	21.498793	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+317	N5	SYBR	SYBR	Unknown	Undetermined	62.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335						true			true				
+318	N6	SYBR	SYBR	Unknown	17.270515	86.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+319	N7	SYBR	SYBR	Unknown	22.679976	84.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+320	N8	SYBR	SYBR	Unknown	26.423586	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+321	N9	SYBR	SYBR	Unknown	26.225302	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+322	N10	SYBR	SYBR	Unknown	23.304897	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+323	N11	SYBR	SYBR	Unknown	24.065584	90.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+324	N12	SYBR	SYBR	Unknown	20.168274	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+325	N13	SYBR	SYBR	Unknown	32.495636	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+326	N14	SYBR	SYBR	Unknown	24.681602	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+327	N15	SYBR	SYBR	Unknown	23.450422	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+328	N16	SYBR	SYBR	Unknown	22.30682	82.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+340	O4	SYBR	SYBR	Unknown	21.565628	87.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+341	O5	SYBR	SYBR	Unknown	21.691242	87.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+342	O6	SYBR	SYBR	Unknown	17.183126	86.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+343	O7	SYBR	SYBR	Unknown	22.561518	84.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+344	O8	SYBR	SYBR	Unknown	25.829458	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+345	O9	SYBR	SYBR	Unknown	26.23544	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+346	O10	SYBR	SYBR	Unknown	23.259277	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+347	O11	SYBR	SYBR	Unknown	23.468279	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+348	O12	SYBR	SYBR	Unknown	19.791182	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+349	O13	SYBR	SYBR	Unknown	32.051956	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+350	O14	SYBR	SYBR	Unknown	24.572086	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+351	O15	SYBR	SYBR	Unknown	23.42617	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+352	O16	SYBR	SYBR	Unknown	22.032076	82.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+364	P4	SYBR	SYBR	Unknown	21.327196	87.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+365	P5	SYBR	SYBR	Unknown	21.568708	87.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+366	P6	SYBR	SYBR	Unknown	17.18763	86.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+367	P7	SYBR	SYBR	Unknown	22.5309	84.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+368	P8	SYBR	SYBR	Unknown	26.09778	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+369	P9	SYBR	SYBR	Unknown	26.05017	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+370	P10	SYBR	SYBR	Unknown	23.25793	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+371	P11	SYBR	SYBR	Unknown	23.614399	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+372	P12	SYBR	SYBR	Unknown	19.66119	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+373	P13	SYBR	SYBR	Unknown	31.60897	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+374	P14	SYBR	SYBR	Unknown	24.537624	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+375	P15	SYBR	SYBR	Unknown	23.478474	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+376	P16	SYBR	SYBR	Unknown	21.937883	82.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.120600335													
+Slope		cycles/log decade
+Y-Intercept		
+R^2		
+
+
+
+NAP	LPL
+	

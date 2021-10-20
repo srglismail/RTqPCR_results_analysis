@@ -1,0 +1,45 @@
+SDS 2.4	AQ Results	1.0
+Filename	WT Keio OD 05 Primer mix 4 replica
+PlateID	
+Assay Type	Absolute Quantification
+Run DateTime	1.08.20 15:13:57
+Operator	
+ThermalCycleParams	
+
+Sample Information
+
+Well	Sample Name	Detector Name	Reporter	Task	Ct	Tm Value	Tm Type	Quantity	Qty Mean	Qty StdDev	Ct Median	Ct Mean	Ct StdDev	Ct Type	Template Name	Baseline Type	Baseline Start	Baseline Stop	Threshold Type	Threshold	FOS	HMD	LME	EW	BPR	NAW	HNS	HRN	EAF	BAF	TAF	CAF	
+28	B4	SYBR	SYBR	Unknown	Undetermined	62.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883						true			true				
+29	B5	SYBR	SYBR	Unknown	Undetermined	62.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883						true			true				
+30	B6	SYBR	SYBR	Unknown	Undetermined	62.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883						true			true				
+31	B7	SYBR	SYBR	Unknown	32.00976	86.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+32	B8	SYBR	SYBR	Unknown	Undetermined	62.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883						true			true				
+33	B9	SYBR	SYBR	Unknown	31.601063	88.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+34	B10	SYBR	SYBR	Unknown	32.427322	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+35	B11	SYBR	SYBR	Unknown	35.184776	91.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+36	B12	SYBR	SYBR	Unknown	30.809443	85.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+37	B13	SYBR	SYBR	Unknown	31.775219	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+38	B14	SYBR	SYBR	Unknown	31.975382	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+39	B15	SYBR	SYBR	Unknown	34.02207	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+40	B16	SYBR	SYBR	Unknown	32.360104	82.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+52	C4	SYBR	SYBR	Unknown	30.978697	87.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+53	C5	SYBR	SYBR	Unknown	30.02143	79.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+54	C6	SYBR	SYBR	Unknown	33.10017	86.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+55	C7	SYBR	SYBR	Unknown	31.66384	84.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+56	C8	SYBR	SYBR	Unknown	33.217705	89.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+57	C9	SYBR	SYBR	Unknown	Undetermined	62.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883						true			true				
+58	C10	SYBR	SYBR	Unknown	33.464333	86.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+59	C11	SYBR	SYBR	Unknown	35.044033	90.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+60	C12	SYBR	SYBR	Unknown	32.330532	85.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+61	C13	SYBR	SYBR	Unknown	Undetermined	62.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883						true			true				
+62	C14	SYBR	SYBR	Unknown	31.58412	86.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+63	C15	SYBR	SYBR	Unknown	32.59375	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+64	C16	SYBR	SYBR	Unknown	32.14205	82.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.028106883													
+Slope		cycles/log decade
+Y-Intercept		
+R^2		
+
+
+
+NAP	LPL
+	

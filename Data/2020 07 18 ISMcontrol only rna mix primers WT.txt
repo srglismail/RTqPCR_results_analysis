@@ -1,0 +1,58 @@
+SDS 2.4	AQ Results	1.0
+Filename	ISM mix primers WT
+PlateID	
+Assay Type	Absolute Quantification
+Run DateTime	18.07.20 17:05:54
+Operator	
+ThermalCycleParams	
+
+Sample Information
+
+Well	Sample Name	Detector Name	Reporter	Task	Ct	Tm Value	Tm Type	Quantity	Qty Mean	Qty StdDev	Ct Median	Ct Mean	Ct StdDev	Ct Type	Template Name	Baseline Type	Baseline Start	Baseline Stop	Threshold Type	Threshold	FOS	HMD	LME	EW	BPR	NAW	HNS	HRN	EAF	BAF	TAF	CAF	
+28	B4	SYBR	SYBR	Unknown	Undetermined	62.2	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432						true			true				
+29	B5	SYBR	SYBR	Unknown	Undetermined	71.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true			true		true				
+30	B6	SYBR	SYBR	Unknown	4.2564926	84.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true			true						
+31	B7	SYBR	SYBR	Unknown	31.097155	84.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+32	B8	SYBR	SYBR	Unknown	30.879753	62.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432							true						
+33	B9	SYBR	SYBR	Unknown	21.887623	81.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true			true						
+34	B10	SYBR	SYBR	Unknown	Undetermined	91.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true			true					true	
+35	B11	SYBR	SYBR	Unknown	Undetermined	65.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432						true			true				
+36	B12	SYBR	SYBR	Unknown	Undetermined	85.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true								true	
+37	B13	SYBR	SYBR	Unknown	Undetermined	83.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true					true				
+38	B14	SYBR	SYBR	Unknown	Undetermined	93.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432					true		true		true				
+39	B15	SYBR	SYBR	Unknown	32.129765	87.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+40	B16	SYBR	SYBR	Unknown	32.28316	81.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+52	C4	SYBR	SYBR	Unknown	20.864895	75.3	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true									
+53	C5	SYBR	SYBR	Unknown	32.014656	78.2	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432							true						
+54	C6	SYBR	SYBR	Unknown	10.019925	90.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true			true						
+55	C7	SYBR	SYBR	Unknown	31.340252	82.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+56	C8	SYBR	SYBR	Unknown	30.515013	76.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432					true		true						
+57	C9	SYBR	SYBR	Unknown	Undetermined	72.9	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true			true		true				
+58	C10	SYBR	SYBR	Unknown	26.669907	86.2	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+59	C11	SYBR	SYBR	Unknown	30.527792	64.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true									
+60	C12	SYBR	SYBR	Unknown	31.891449	85.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+61	C13	SYBR	SYBR	Unknown	31.502623	83.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432					true								
+62	C14	SYBR	SYBR	Unknown	36.73378	87.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true									
+63	C15	SYBR	SYBR	Unknown	32.931194	87.5	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+64	C16	SYBR	SYBR	Unknown	Undetermined	81.0	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432						true			true				
+76	D4	SYBR	SYBR	Unknown	30.831533	86.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+77	D5	SYBR	SYBR	Unknown	29.149225	87.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+78	D6	SYBR	SYBR	Unknown	Undetermined	72.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true					true				
+79	D7	SYBR	SYBR	Unknown	33.04304	84.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true									
+80	D8	SYBR	SYBR	Unknown	Undetermined	89.7	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true					true				
+81	D9	SYBR	SYBR	Unknown	30.455318	87.6	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+82	D10	SYBR	SYBR	Unknown	Undetermined	83.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true			true					true	
+83	D11	SYBR	SYBR	Unknown	27.222967	90.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true									
+84	D12	SYBR	SYBR	Unknown	31.72909	85.4	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+85	D13	SYBR	SYBR	Unknown	33.0091	84.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432													
+86	D14	SYBR	SYBR	Unknown	34.2963	86.2	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432							true						
+87	D15	SYBR	SYBR	Unknown	37.134052	87.8	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true									
+88	D16	SYBR	SYBR	Unknown	33.633476	82.1	Auto Tm							Automatic Ct		Automatic			Automatic	0.053925432				true									
+Slope		cycles/log decade
+Y-Intercept		
+R^2		
+
+
+
+NAP	LPL
+	
