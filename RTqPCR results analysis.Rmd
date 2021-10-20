@@ -109,6 +109,20 @@ Df7dataset <- rbind(Df6dataset,Df5dataset)
 ```
 
 
+
+```{r}
+Df8dataset <- read_delim("Data/2020 08 24 ybeX minus.txt", "\t", escape_double = FALSE, trim_ws = TRUE, skip = 10, n_max = 156) 
+Df8dataset <- janitor::remove_empty(Df8dataset) 
+Df8dataset <- rename(Df8dataset,  TmValue = `Tm Value`)
+Df8dataset <- Df8dataset %>% select (-c(NAW, HNS, EAF))
+Df8dataset <- mutate(Df8dataset, Bacteria = "ybeX" , TDate = "2020-08-24")
+Df8dataset <- mutate(Df8dataset, SamP = `Sample Name` )
+Df8dataset <- rename(Df8dataset, Strain = `Sample Name` )
+Df8dataset$Ct <- as.numeric(Df8dataset$Ct, digits = 4, is.numeric = TRUE)
+
+```
+
+
 the primer couple for line 11 gives 2 dissociation curves.
 "H16" should be eliminated from the Df1dataset.
 ```{r}
@@ -565,6 +579,121 @@ Df7dataset <- rename(Df7dataset, Gene = Strain )
 ```
 
 ```{r}
+Df8dataset <- Df8dataset %>% mutate(Strain = case_when(
+Strain == "B4" ~ "CorA", Strain == "C4" ~ "CorA",
+Strain == "D4" ~ "CorA", Strain == "B5" ~ "cysG",
+Strain == "C5" ~ "cysG", Strain == "D5" ~ "cysG",
+
+Strain == "B6" ~ "frr", Strain == "C6" ~ "frr",
+Strain == "D6" ~ "frr", Strain == "B7" ~ "gyrA",
+Strain == "C7" ~ "gyrA", Strain == "D7" ~ "gyrA",
+
+Strain == "B8" ~ "hcaT", Strain == "C8" ~ "hcaT",
+Strain == "D8" ~ "hcaT", Strain == "B9" ~ "idnT",
+Strain == "C9" ~ "idnT", Strain == "D9" ~ "idnT",
+
+Strain == "B10" ~ "Lnt2", Strain == "C10" ~ "Lnt2", 
+Strain == "D10" ~ "Lnt2", Strain == "B11" ~ "Lnt",
+Strain == "C11" ~ "Lnt", Strain == "D11" ~ "Lnt",
+
+Strain == "B12" ~ "miaB", Strain == "C12" ~ "miaB",
+Strain == "D12" ~ "miaB", Strain == "B13" ~ "ybeX",
+Strain == "C13" ~ "ybeX", Strain == "D13" ~ "ybeX",
+
+Strain == "B14" ~ "ybeY", Strain == "C14" ~ "ybeY",
+Strain == "D14" ~ "ybeY", Strain == "B15" ~ "ybeZ",
+Strain == "C15" ~ "ybeZ", Strain == "D15" ~ "ybeZ",
+
+Strain == "B16" ~ "ybeZY", Strain == "C16" ~ "ybeZY",
+Strain == "D16" ~ "ybeZY",
+  
+Strain == "G4" ~ "CorA", Strain == "H4" ~ "CorA",
+Strain == "F4" ~ "CorA", Strain == "G5" ~ "cysG",
+Strain == "H5" ~ "cysG", Strain == "F5" ~ "cysG",
+
+Strain == "G6" ~ "frr", Strain == "H6" ~ "frr",
+Strain == "F6" ~ "frr", Strain == "G7" ~ "gyrA",
+Strain == "H7" ~ "gyrA", Strain == "F7" ~ "gyrA",
+
+Strain == "G8" ~ "hcaT", Strain == "H8" ~ "hcaT",
+Strain == "F8" ~ "hcaT", Strain == "G9" ~ "idnT",
+Strain == "H9" ~ "idnT", Strain == "F9" ~ "idnT",
+
+Strain == "G10" ~ "Lnt2", Strain == "H10" ~ "Lnt2", 
+Strain == "F10" ~ "Lnt2", Strain == "G11" ~ "Lnt",
+Strain == "H11" ~ "Lnt", Strain == "F11" ~ "Lnt",
+
+Strain == "G12" ~ "miaB", Strain == "H12" ~ "miaB",
+Strain == "F12" ~ "miaB", Strain == "G13" ~ "ybeX",
+Strain == "H13" ~ "ybeX", Strain == "F13" ~ "ybeX",
+
+Strain == "G14" ~ "ybeY", Strain == "H14" ~ "ybeY",
+Strain == "F14" ~ "ybeY", Strain == "G15" ~ "ybeZ",
+Strain == "H15" ~ "ybeZ", Strain == "F15" ~ "ybeZ",
+
+Strain == "G16" ~ "ybeZY", Strain == "H16" ~ "ybeZY",
+Strain == "F16" ~ "ybeZY",
+
+Strain == "L4" ~ "CorA", Strain == "J4" ~ "CorA",
+Strain == "K4" ~ "CorA", Strain == "L5" ~ "cysG",
+Strain == "J5" ~ "cysG", Strain == "K5" ~ "cysG",
+
+Strain == "L6" ~ "frr", Strain == "J6" ~ "frr",
+Strain == "K6" ~ "frr", Strain == "L7" ~ "gyrA",
+Strain == "K7" ~ "gyrA", Strain == "J7" ~ "gyrA",
+
+Strain == "L8" ~ "hcaT", Strain == "K8" ~ "hcaT",
+Strain == "J8" ~ "hcaT", Strain == "L9" ~ "idnT",
+Strain == "J9" ~ "idnT", Strain == "K9" ~ "idnT",
+
+Strain == "L10" ~ "Lnt2", Strain == "J10" ~ "Lnt2", 
+Strain == "K10" ~ "Lnt2", Strain == "L11" ~ "Lnt",
+Strain == "J11" ~ "Lnt", Strain == "K11" ~ "Lnt",
+
+Strain == "L12" ~ "miaB", Strain == "K12" ~ "miaB",
+Strain == "J12" ~ "miaB", Strain == "L13" ~ "ybeX",
+Strain == "K13" ~ "ybeX", Strain == "J13" ~ "ybeX",
+
+Strain == "L14" ~ "ybeY", Strain == "J14" ~ "ybeY",
+Strain == "K14" ~ "ybeY", Strain == "L15" ~ "ybeZ",
+Strain == "J15" ~ "ybeZ", Strain == "K15" ~ "ybeZ",
+
+Strain == "L16" ~ "ybeZY", Strain == "K16" ~ "ybeZY",
+Strain == "J16" ~ "ybeZY",
+
+Strain == "N4" ~ "CorA", Strain == "O4" ~ "CorA",
+Strain == "P4" ~ "CorA", Strain == "N5" ~ "cysG",
+Strain == "O5" ~ "cysG", Strain == "P5" ~ "cysG",
+
+Strain == "N6" ~ "frr", Strain == "O6" ~ "frr",
+Strain == "P6" ~ "frr", Strain == "N7" ~ "gyrA",
+Strain == "O7" ~ "gyrA", Strain == "P7" ~ "gyrA",
+
+Strain == "N8" ~ "hcaT", Strain == "O8" ~ "hcaT",
+Strain == "P8" ~ "hcaT", Strain == "N9" ~ "idnT",
+Strain == "O9" ~ "idnT", Strain == "P9" ~ "idnT",
+
+Strain == "N10" ~ "Lnt2", Strain == "O10" ~ "Lnt2", 
+Strain == "P10" ~ "Lnt2", Strain == "N11" ~ "Lnt",
+Strain == "O11" ~ "Lnt", Strain == "P11" ~ "Lnt",
+
+Strain == "N12" ~ "miaB", Strain == "O12" ~ "miaB",
+Strain == "P12" ~ "miaB", Strain == "N13" ~ "ybeX",
+Strain == "O13" ~ "ybeX", Strain == "P13" ~ "ybeX",
+
+Strain == "N14" ~ "ybeY", Strain == "O14" ~ "ybeY",
+Strain == "P14" ~ "ybeY", Strain == "N15" ~ "ybeZ",
+Strain == "O15" ~ "ybeZ", Strain == "P15" ~ "ybeZ",
+
+Strain == "N16" ~ "ybeZY", Strain == "O16" ~ "ybeZY",
+Strain == "P16" ~ "ybeZY"
+))
+
+Df8dataset <- rename(Df8dataset, Gene = Strain )
+```
+
+
+```{r}
 ggplot(data = Df7dataset, mapping = aes(x = Gene, y = Ct)) + 
   geom_boxplot()+
   geom_point(aes(color=TDate))
@@ -578,11 +707,13 @@ ggplot(data = Df1dataset, mapping = aes(x = Gene, y = Ct)) +
 
 
 ```{r}
-bindall <- rbind(Df1dataset,Df2dataset,Df3dataset,Df4dataset,Df7dataset)
+bindall <- rbind(Df2dataset,Df3dataset,Df4dataset,Df7dataset, Df8dataset)
 
 ggplot(data = bindall, mapping = aes(x = Gene, y = Ct)) + 
   geom_boxplot()+
-  geom_point(aes(color=TDate))
+  geom_point(aes(color=TDate))+
+  facet_wrap(~Bacteria)+
+  theme(axis.text.x = element_text(angle = 90))
 ```
 
 
