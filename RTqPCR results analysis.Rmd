@@ -123,6 +123,15 @@ Df8dataset$Ct <- as.numeric(Df8dataset$Ct, digits = 4, is.numeric = TRUE)
 ```
 
 
+```{r}
+Df9dataset <- read_delim("Data/WT_ybeX_LB_hexa_mix.csv", 
+    ",", escape_double = FALSE, locale = locale(grouping_mark = ""), 
+    trim_ws = TRUE)
+Df9dataset <- rename(Df9dataset,  TmValue = `Tm Value`)
+Df9dataset <- mutate(Df9dataset, TDate = "2021-09-24")
+```
+
+
 the primer couple for line 11 gives 2 dissociation curves.
 "H16" should be eliminated from the Df1dataset.
 ```{r}
@@ -693,6 +702,7 @@ Df8dataset <- rename(Df8dataset, Gene = Strain )
 ```
 
 
+
 ```{r}
 ggplot(data = Df7dataset, mapping = aes(x = Gene, y = Ct)) + 
   geom_boxplot()+
@@ -718,6 +728,12 @@ ggplot(data = bindall, mapping = aes(x = Gene, y = Ct)) +
 
 
 ```{r}
+
+ggplot(data = Df9dataset, mapping = aes(x = Gene, y = Ct)) + 
+  geom_boxplot()+
+  geom_point(aes(color=TDate))+
+  facet_wrap(~Primer)+
+  theme(axis.text.x = element_text(angle = 90))
 
 ```
 
