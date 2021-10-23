@@ -730,9 +730,13 @@ ggplot(data = bindall, mapping = aes(x = Gene, y = Ct)) +
 ```{r}
 
 ggplot(data = Df9dataset, mapping = aes(x = Gene, y = Ct)) + 
-  geom_boxplot()+
-  geom_point(aes(color=TDate))+
+  geom_point(aes(color= Bacteria))+
   facet_wrap(~Primer)+
+  theme(axis.text.x = element_text(angle = 90))
+
+ggplot(data = bindall, mapping = aes(x = Gene, y = Ct)) + 
+  geom_point(aes(color=Bacteria))+
+  facet_wrap(~TDate)+
   theme(axis.text.x = element_text(angle = 90))
 
 ```
