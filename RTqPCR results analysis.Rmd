@@ -27,7 +27,9 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 
 # Reading the data sets
 
-First dataset is a control meaning that the total RNA was used at the same concentrations as Df2dataset but no reverset transcriptase used.
+First dataset is a control meaning that the total RNA was used at the same concentrations as Df2dataset but no enzyme were used (reverse transcriptase).
+Df1dataset contains control only RNA reactions for Df2dataset.
+As seen from the file name the experiment date is 17.07.2020 and the strain is WT.
 
 ```{r}
 
@@ -40,11 +42,10 @@ Df1dataset <- mutate(Df1dataset, Bacteria = "WT" , TDate = "2020-07-17")
 Df1dataset <- mutate(Df1dataset, SamP = `Sample Name` )
 Df1dataset <- rename(Df1dataset, Strain = `Sample Name` )
 Df1dataset$Ct <- as.numeric(Df1dataset$Ct, digits = 4, is.numeric = TRUE)
-
-
 ```
 
 cDNA synthesis: WT1.2 and WT2.2 were used. Both ISMmix primers and Random Primers were used for the cDNA synthesis. But for the SYBR dye based qPCR reactions WT1.2 with Random primers were used.
+
 ```{r}
 Df2dataset <- read_delim("Data/2020 07 17 wtBW rtQpcr.txt", 
     "\t", escape_double = FALSE, trim_ws = TRUE , skip = 10, n_max = 78) 
@@ -55,10 +56,15 @@ Df2dataset <- mutate(Df2dataset, Bacteria = "WT" , TDate = "2020-07-17")
 Df2dataset <- mutate(Df2dataset, SamP = `Sample Name` )
 Df2dataset <- rename(Df2dataset, Strain = `Sample Name` )
 Df2dataset$Ct <- as.numeric(Df2dataset$Ct, digits = 4, is.numeric = TRUE)
+Df2dataset <- filter(Df2dataset, !(SamP %in% c("H16")))
 ```
 
-Df2dataset contains the table named Df1dataset control only RNA reactions.
-As seen from the file name the experiment date is 17.07.2020 and the strain is WT.
+I/G/H data is not very good. The following wells specifically.
+H16, G4, H10, I10, I11, G14, I13, M8, M15 
+missing data-no curve  I9, G9, H9
+varying data between replica I12, G12, H12, I16, G16, H16
+
+This happened, many unreliable rows, because I forgot to spin the samples down in the plate!
 
 ```{r}
 Df3dataset <- read_delim("Data/2020 07 18 good dataISM mix primers WT.txt", 
@@ -70,8 +76,13 @@ Df3dataset <- mutate(Df3dataset, Bacteria = "WT", TDate = "2020-07-18")
 Df3dataset <- mutate(Df3dataset, SamP = `Sample Name` )
 Df3dataset <- rename(Df3dataset, Strain = `Sample Name` )
 Df3dataset$Ct <- as.numeric(Df3dataset$Ct, digits = 4, is.numeric = TRUE)
+Df3dataset <- filter(Df3dataset, !(SamP %in% c("H16", "G4", "H10", "I10", "I11", "G14", "I13", "M8", "M15", "I9", "G9", "H9", "I12", "G12", "H12", "I16", "G16", "H16"  )))
+
 ```
 
+The experiment have no "onlyRNA" control. So that B/C/D and J/K/L and F/G/H and N/O/P represent the well positions where the qPCR occur.
+Following wells should be thrown out:
+L15, H16, D4, B5, B11
 
 ```{r}
 Df4dataset <- read_delim("Data/2020 07 20 WT keio 4 identical RNA purification.txt", "\t", escape_double = FALSE, trim_ws = TRUE , skip = 10, n_max = 156) 
@@ -82,9 +93,11 @@ Df4dataset <- mutate(Df4dataset, Bacteria = "WT" , TDate = "2020-07-20")
 Df4dataset <- mutate(Df4dataset, SamP = `Sample Name` )
 Df4dataset <- rename(Df4dataset, Strain = `Sample Name` )
 Df4dataset$Ct <- as.numeric(Df4dataset$Ct, digits = 4, is.numeric = TRUE)
+Df4dataset <- filter(Df4dataset, !(SamP %in% c("H16", "L15", "D4", "B5", "B11")))
 
 ```
-
+Both Df5dataset and Df6dataset comes from the same plate, the same reading. I wanted to make it clearer to understand and so I exported the data as 2 datasets and combined them as Df7dataset.
+following wells are problematic: H16, B23
 ```{r}
 Df5dataset <- read_delim("Data/2020 08 01 WT Keio OD 05 Primer mix 4 replica.txt", "\t", escape_double = FALSE, trim_ws = TRUE , skip = 10, n_max = 156) 
 Df5dataset <- janitor::remove_empty(Df5dataset) 
@@ -94,6 +107,8 @@ Df5dataset <- mutate(Df5dataset, Bacteria = "WT" , TDate = "2020-08-01")
 Df5dataset <- mutate(Df5dataset, SamP = `Sample Name` )
 Df5dataset <- rename(Df5dataset, Strain = `Sample Name` )
 Df5dataset$Ct <- as.numeric(Df5dataset$Ct, digits = 4, is.numeric = TRUE)
+Df5dataset <- filter(Df5dataset, !(SamP %in% c("H16")))
+
 
 Df6dataset <- read_delim("Data/2020 08 01 WT Keio OD 05 Primer mix 4 replica2.txt", "\t", escape_double = FALSE, trim_ws = TRUE , skip = 10, n_max = 52) 
 Df6dataset <- janitor::remove_empty(Df6dataset) 
@@ -103,12 +118,13 @@ Df6dataset <- mutate(Df6dataset, Bacteria = "WT" , TDate = "2020-08-01")
 Df6dataset <- mutate(Df6dataset, SamP = `Sample Name` )
 Df6dataset <- rename(Df6dataset, Strain = `Sample Name` )
 Df6dataset$Ct <- as.numeric(Df6dataset$Ct, digits = 4, is.numeric = TRUE)
+Df6dataset <- filter(Df6dataset, !(SamP %in% c("B23")))
 
 Df7dataset <- rbind(Df6dataset,Df5dataset)
 
 ```
-
-
+Following wells are excluded:
+H16 (for now)
 
 ```{r}
 Df8dataset <- read_delim("Data/2020 08 24 ybeX minus.txt", "\t", escape_double = FALSE, trim_ws = TRUE, skip = 10, n_max = 156) 
@@ -119,20 +135,27 @@ Df8dataset <- mutate(Df8dataset, Bacteria = "ybeX" , TDate = "2020-08-24")
 Df8dataset <- mutate(Df8dataset, SamP = `Sample Name` )
 Df8dataset <- rename(Df8dataset, Strain = `Sample Name` )
 Df8dataset$Ct <- as.numeric(Df8dataset$Ct, digits = 4, is.numeric = TRUE)
+Df8dataset <- filter(Df8dataset, !(SamP %in% c("H16", "G13")))
 
 ```
-
+The experiment was performed yesterday, and the following wells should be thrown out:
+H16, B8, and B5
 
 ```{r}
-Df9dataset <- read_delim("Data/WT_ybeX_LB_hexa_mix.csv", 
-    ",", escape_double = FALSE, locale = locale(grouping_mark = ""), 
-    trim_ws = TRUE)
+Df9dataset <- read_delim("Data/2021 10 24 ybeX 4pure 3rep.txt", "\t", 
+              escape_double = FALSE, trim_ws = TRUE, skip = 10, n_max = 116) 
+Df9dataset <- janitor::remove_empty(Df9dataset) 
 Df9dataset <- rename(Df9dataset,  TmValue = `Tm Value`)
-Df9dataset <- mutate(Df9dataset, TDate = "2021-09-24")
+Df9dataset <- Df9dataset %>% select (-c(NAW, HNS))
+Df9dataset <- mutate(Df9dataset, Bacteria = "ybeX" , TDate = "2021-10-24")
+Df9dataset <- mutate(Df9dataset, SamP = `Sample Name` )
+Df9dataset <- rename(Df9dataset, Strain = `Sample Name` )
+Df9dataset$Ct <- as.numeric(Df9dataset$Ct, digits = 4, is.numeric = TRUE)
+Df9dataset <- filter(Df9dataset, !(SamP %in% c("H16", "B8", "B5")))
 ```
 
 
-the primer couple for line 11 gives 2 dissociation curves.
+"the primer couple for line 11 gives 2 dissociation curves."
 "H16" should be eliminated from the Df1dataset.
 ```{r}
 Df1dataset <- Df1dataset %>% mutate(Strain = case_when(
@@ -240,7 +263,6 @@ Strain == "J16" ~ "ybeZY"
 ))
 
 Df2dataset <- Df2dataset[ !(Df2dataset$Well %in% c(28:88)), ]
-
 Df2dataset <- rename(Df2dataset, Gene = Strain )
 ```
 
@@ -702,12 +724,141 @@ Df8dataset <- rename(Df8dataset, Gene = Strain )
 ```
 
 
+## Marking the second ybeX RT -qPCR dataset
+
+Df9dataset belongs to ybeX::KAN strain, meaning that the cDNA synthesis was perfomed using total RNA purified from ybeX strain, importantly hexamers were used while the synthesis. Only Df1dataset and Df9dataset origins from hexamer used cDNA reactions.
+
+Based on the melting curves (dissociation curves) and the amplification plots
+H16 and B8 and B5 has to be eliminated from the analysis
+```{r}
+Df9dataset <- Df9dataset %>% mutate(Strain = case_when(
+Strain == "B4" ~ "CorA", Strain == "C4" ~ "CorA",
+Strain == "D4" ~ "CorA", Strain == "B5" ~ "cysG",
+Strain == "C5" ~ "cysG", Strain == "D5" ~ "cysG",
+
+Strain == "B6" ~ "frr", Strain == "C6" ~ "frr",
+Strain == "D6" ~ "frr", Strain == "B7" ~ "gyrA",
+Strain == "C7" ~ "gyrA", Strain == "D7" ~ "gyrA",
+
+Strain == "B8" ~ "hcaT", Strain == "C8" ~ "hcaT",
+Strain == "D8" ~ "hcaT", Strain == "B9" ~ "idnT",
+Strain == "C9" ~ "idnT", Strain == "D9" ~ "idnT",
+
+Strain == "B10" ~ "Lnt2", Strain == "C10" ~ "Lnt2", 
+Strain == "D10" ~ "Lnt2", Strain == "B11" ~ "Lnt",
+Strain == "C11" ~ "Lnt", Strain == "D11" ~ "Lnt",
+
+Strain == "B12" ~ "miaB", Strain == "C12" ~ "miaB",
+Strain == "D12" ~ "miaB", Strain == "B13" ~ "ybeX",
+Strain == "C13" ~ "ybeX", Strain == "D13" ~ "ybeX",
+
+Strain == "B14" ~ "ybeY", Strain == "C14" ~ "ybeY",
+Strain == "D14" ~ "ybeY", Strain == "B15" ~ "ybeZ",
+Strain == "C15" ~ "ybeZ", Strain == "D15" ~ "ybeZ",
+
+Strain == "B16" ~ "ybeZY", Strain == "C16" ~ "ybeZY",
+Strain == "D16" ~ "ybeZY",
+  
+Strain == "G4" ~ "CorA", Strain == "H4" ~ "CorA",
+Strain == "F4" ~ "CorA", Strain == "G5" ~ "cysG",
+Strain == "H5" ~ "cysG", Strain == "F5" ~ "cysG",
+
+Strain == "G6" ~ "frr", Strain == "H6" ~ "frr",
+Strain == "F6" ~ "frr", Strain == "G7" ~ "gyrA",
+Strain == "H7" ~ "gyrA", Strain == "F7" ~ "gyrA",
+
+Strain == "G8" ~ "hcaT", Strain == "H8" ~ "hcaT",
+Strain == "F8" ~ "hcaT", Strain == "G9" ~ "idnT",
+Strain == "H9" ~ "idnT", Strain == "F9" ~ "idnT",
+
+Strain == "G10" ~ "Lnt2", Strain == "H10" ~ "Lnt2", 
+Strain == "F10" ~ "Lnt2", Strain == "G11" ~ "Lnt",
+Strain == "H11" ~ "Lnt", Strain == "F11" ~ "Lnt",
+
+Strain == "G12" ~ "miaB", Strain == "H12" ~ "miaB",
+Strain == "F12" ~ "miaB", Strain == "G13" ~ "ybeX",
+Strain == "H13" ~ "ybeX", Strain == "F13" ~ "ybeX",
+
+Strain == "G14" ~ "ybeY", Strain == "H14" ~ "ybeY",
+Strain == "F14" ~ "ybeY", Strain == "G15" ~ "ybeZ",
+Strain == "H15" ~ "ybeZ", Strain == "F15" ~ "ybeZ",
+
+Strain == "G16" ~ "ybeZY", Strain == "H16" ~ "ybeZY",
+Strain == "F16" ~ "ybeZY",
+
+Strain == "L4" ~ "CorA", Strain == "J4" ~ "CorA",
+Strain == "K4" ~ "CorA", Strain == "L5" ~ "cysG",
+Strain == "J5" ~ "cysG", Strain == "K5" ~ "cysG",
+
+Strain == "L6" ~ "frr", Strain == "J6" ~ "frr",
+Strain == "K6" ~ "frr", Strain == "L7" ~ "gyrA",
+Strain == "K7" ~ "gyrA", Strain == "J7" ~ "gyrA",
+
+Strain == "L8" ~ "hcaT", Strain == "K8" ~ "hcaT",
+Strain == "J8" ~ "hcaT", Strain == "L9" ~ "idnT",
+Strain == "J9" ~ "idnT", Strain == "K9" ~ "idnT",
+
+Strain == "L10" ~ "Lnt2", Strain == "J10" ~ "Lnt2", 
+Strain == "K10" ~ "Lnt2", Strain == "L11" ~ "Lnt",
+Strain == "J11" ~ "Lnt", Strain == "K11" ~ "Lnt",
+
+Strain == "L12" ~ "miaB", Strain == "K12" ~ "miaB",
+Strain == "J12" ~ "miaB", Strain == "L13" ~ "ybeX",
+Strain == "K13" ~ "ybeX", Strain == "J13" ~ "ybeX",
+
+Strain == "L14" ~ "ybeY", Strain == "J14" ~ "ybeY",
+Strain == "K14" ~ "ybeY", Strain == "L15" ~ "ybeZ",
+Strain == "J15" ~ "ybeZ", Strain == "K15" ~ "ybeZ",
+
+Strain == "L16" ~ "ybeZY", Strain == "K16" ~ "ybeZY",
+Strain == "J16" ~ "ybeZY",
+
+Strain == "N4" ~ "CorA", Strain == "O4" ~ "CorA",
+Strain == "P4" ~ "CorA", Strain == "N5" ~ "cysG",
+Strain == "O5" ~ "cysG", Strain == "P5" ~ "cysG",
+
+Strain == "N6" ~ "frr", Strain == "O6" ~ "frr",
+Strain == "P6" ~ "frr", Strain == "N7" ~ "gyrA",
+Strain == "O7" ~ "gyrA", Strain == "P7" ~ "gyrA",
+
+Strain == "N8" ~ "hcaT", Strain == "O8" ~ "hcaT",
+Strain == "P8" ~ "hcaT", Strain == "N9" ~ "idnT",
+Strain == "O9" ~ "idnT", Strain == "P9" ~ "idnT",
+
+Strain == "N10" ~ "Lnt2", Strain == "O10" ~ "Lnt2", 
+Strain == "P10" ~ "Lnt2", Strain == "N11" ~ "Lnt",
+Strain == "O11" ~ "Lnt", Strain == "P11" ~ "Lnt",
+
+Strain == "N12" ~ "miaB", Strain == "O12" ~ "miaB",
+Strain == "P12" ~ "miaB", Strain == "N13" ~ "ybeX",
+Strain == "O13" ~ "ybeX", Strain == "P13" ~ "ybeX",
+
+Strain == "N14" ~ "ybeY", Strain == "O14" ~ "ybeY",
+Strain == "P14" ~ "ybeY", Strain == "N15" ~ "ybeZ",
+Strain == "O15" ~ "ybeZ", Strain == "P15" ~ "ybeZ",
+
+Strain == "N16" ~ "ybeZY", Strain == "O16" ~ "ybeZY",
+Strain == "P16" ~ "ybeZY"
+))
+
+Df9dataset <- rename(Df9dataset, Gene = Strain )
+```
+
+
 
 ```{r}
-ggplot(data = Df7dataset, mapping = aes(x = Gene, y = Ct)) + 
+library(cowplot)
+testbind <- rbind(Df8dataset, Df9dataset) 
+ggplot(data = testbind, mapping = aes(x = Gene, y = Ct)) + 
   geom_boxplot()+
-  geom_point(aes(color=TDate))
+  geom_point(aes(color=TDate))+
+  theme_cowplot()
 ```
+
+```{r}
+Df8dataset %>% filter(Gene == "ybeX")
+```
+
 
 ```{r}
 ggplot(data = Df1dataset, mapping = aes(x = Gene, y = Ct)) + 
@@ -717,7 +868,7 @@ ggplot(data = Df1dataset, mapping = aes(x = Gene, y = Ct)) +
 
 
 ```{r}
-bindall <- rbind(Df2dataset,Df3dataset,Df4dataset,Df7dataset, Df8dataset)
+bindall <- rbind(Df2dataset,Df3dataset,Df4dataset,Df7dataset, Df8dataset, Df9dataset)
 
 ggplot(data = bindall, mapping = aes(x = Gene, y = Ct)) + 
   geom_boxplot()+
@@ -726,13 +877,12 @@ ggplot(data = bindall, mapping = aes(x = Gene, y = Ct)) +
   theme(axis.text.x = element_text(angle = 90))
 ```
 
+```{r}
+write.csv(bindall,"WT_ybeX_RTqPCR.csv", row.names = FALSE)
+```
+
 
 ```{r}
-
-ggplot(data = Df9dataset, mapping = aes(x = Gene, y = Ct)) + 
-  geom_point(aes(color= Bacteria))+
-  facet_wrap(~Primer)+
-  theme(axis.text.x = element_text(angle = 90))
 
 ggplot(data = bindall, mapping = aes(x = Gene, y = Ct)) + 
   geom_point(aes(color=Bacteria))+
@@ -740,4 +890,13 @@ ggplot(data = bindall, mapping = aes(x = Gene, y = Ct)) +
   theme(axis.text.x = element_text(angle = 90))
 
 ```
+```{r}
+bindall %>% fılter(TmValue > 80) %>% 
+ggplot(mapping = aes(x = Gene, y = Ct)) + 
+  geom_point()+
+  facet_wrap(~Bacteria)+
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+
 
