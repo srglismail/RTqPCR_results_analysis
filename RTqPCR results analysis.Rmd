@@ -79,7 +79,7 @@ Df3dataset$Ct <- as.numeric(Df3dataset$Ct, digits = 4, is.numeric = TRUE)
 Df3dataset <- filter(Df3dataset, !(SamP %in% c("H16", "G4", "H10", "I10", "I11", "G14", "I13", "M8", "M15", "I9", "G9", "H9", "I12", "G12", "H12", "I16", "G16", "H16"  )))
 
 ```
-
+qPCR setup: 10uL of reactions 13 primer couple using WT1.1, WT1.2 (the cells were collected from the same flask and purified separately) WT2.1, WT2.2 were treathed the same way as the previous samples.
 The experiment have no "onlyRNA" control. So that B/C/D and J/K/L and F/G/H and N/O/P represent the well positions where the qPCR occur.
 Following wells should be thrown out:
 L15, H16, D4, B5, B11
@@ -143,7 +143,7 @@ H16, B8, and B5
 
 ```{r}
 Df9dataset <- read_delim("Data/2021 10 24 ybeX 4pure 3rep.txt", "\t", 
-              escape_double = FALSE, trim_ws = TRUE, skip = 10, n_max = 116) 
+              escape_double = FALSE, trim_ws = TRUE, skip = 10, n_max = 156) 
 Df9dataset <- janitor::remove_empty(Df9dataset) 
 Df9dataset <- rename(Df9dataset,  TmValue = `Tm Value`)
 Df9dataset <- Df9dataset %>% select (-c(NAW, HNS))
@@ -877,26 +877,117 @@ ggplot(data = bindall, mapping = aes(x = Gene, y = Ct)) +
   theme(axis.text.x = element_text(angle = 90))
 ```
 
+
 ```{r}
 write.csv(bindall,"WT_ybeX_RTqPCR.csv", row.names = FALSE)
 ```
 
+```{r}
+data <- read.csv("WT_ybeX_RTqPCR.csv")
+data <- data[-c(3,4,5,8,9,10,11,12)]
+unique(data$TDate)
+```
+
+```{r}
+exp1tidy <- data %>% filter(TDate == "2020-07-17") %>% 
+  mutate(BioRep = "df1", PurifRep = "rep1")
+
+exp2tidy <- data %>% filter(TDate == "2020-07-18", Well <= 207) %>% 
+  mutate(BioRep = "df1", PurifRep = "rep1") 
+
+exp3tidy <- data %>% filter(TDate == "2020-07-18", Well > 207) %>% 
+  mutate(BioRep = "df2", PurifRep = "rep1")
+
+exp4tidy <- data %>% filter(TDate == "2020-07-20", Well <= 88 ) %>% 
+  mutate(BioRep = "df1", PurifRep = "rep1")
+
+exp5tidy <- data %>% filter(TDate == "2020-07-20", Well > 88, Well <= 183 ) %>% 
+  mutate(BioRep = "df1", PurifRep = "rep2")
+
+exp6tidy <- data %>% filter(TDate == "2020-07-20", Well > 183, Well <= 280 ) %>% 
+  mutate(BioRep = "df2", PurifRep = "rep1")
+
+exp7tidy <- data %>% filter(TDate == "2020-07-20", Well >= 316 ) %>% 
+  mutate(BioRep = "df2", PurifRep = "rep2")
+
+exp8tidy <- data %>% filter(TDate == "2020-08-01") %>% mutate(rn = row_number()) %>% filter(rn <= 51) %>% mutate(rn = NULL, BioRep = "df1", PurifRep = "rep1")
+
+exp9tidy <- data %>% filter(TDate == "2020-08-01") %>% mutate(rn = row_number()) %>% filter(rn > 51, rn <= 90) %>% mutate(rn = NULL, BioRep = "df1", PurifRep = "rep1")
+
+exp10tidy <- data %>% filter(TDate == "2020-08-01") %>% mutate(rn = row_number()) %>% filter(rn > 90, rn <= 128) %>% mutate(rn = NULL, BioRep = "df1", PurifRep = "rep2")
+
+exp11tidy <- data %>% filter(TDate == "2020-08-01") %>% mutate(rn = row_number()) %>% filter(rn > 128, rn <= 167) %>% mutate(rn = NULL, BioRep = "df2", PurifRep = "rep1")
+
+exp12tidy <- data %>% filter(TDate == "2020-08-01") %>% mutate(rn = row_number()) %>% filter(rn > 167) %>% mutate(rn = NULL, BioRep = "df2", PurifRep = "rep2")
+
+
+exp13tidy <- data %>% filter(TDate == "2020-08-24", Well <= 88 ) %>% 
+  mutate(BioRep = "df1", PurifRep = "rep1")
+
+exp14tidy <- data %>% filter(TDate == "2020-08-24", Well > 88, Well <= 183 ) %>% 
+  mutate(BioRep = "df1", PurifRep = "rep2")
+
+exp15tidy <- data %>% filter(TDate == "2020-08-24", Well > 183, Well <= 280 ) %>% 
+  mutate(BioRep = "df2", PurifRep = "rep1")
+
+exp16tidy <- data %>% filter(TDate == "2020-08-24", Well >= 316 ) %>% 
+  mutate(BioRep = "df2", PurifRep = "rep2")
+
+
+exp17tidy <- data %>% filter(TDate == "2021-10-24", Well <= 88 ) %>% 
+  mutate(BioRep = "df1", PurifRep = "rep1")
+
+exp18tidy <- data %>% filter(TDate == "2021-10-24", Well > 88, Well <= 183 ) %>% 
+  mutate(BioRep = "df1", PurifRep = "rep2")
+
+exp19tidy <- data %>% filter(TDate == "2021-10-24", Well > 183, Well <= 281 ) %>% 
+  mutate(BioRep = "df2", PurifRep = "rep1")
+
+exp20tidy <- data %>% filter(TDate == "2021-10-24", Well > 281 ) %>% 
+  mutate(BioRep = "df2", PurifRep = "rep2")
+
+rbindtidy <- rbind(exp1tidy, exp2tidy, exp3tidy, exp4tidy, exp5tidy, exp6tidy, exp7tidy, exp8tidy, exp9tidy, exp10tidy, exp11tidy, exp12tidy, exp13tidy, exp14tidy,exp15tidy, exp16tidy,exp17tidy,exp18tidy,exp19tidy,exp20tidy)
+```
+
 
 ```{r}
 
-ggplot(data = bindall, mapping = aes(x = Gene, y = Ct)) + 
-  geom_point(aes(color=Bacteria))+
-  facet_wrap(~TDate)+
+ggplot(data = rbindtidy, mapping = aes(x = Gene, y = Ct)) + 
+  geom_point(aes(color=PurifRep))+
+  facet_grid(Bacteria~BioRep)+
   theme(axis.text.x = element_text(angle = 90))
 
 ```
+
+
 ```{r}
-bindall %>% fılter(TmValue > 80) %>% 
+bindall %>% filter(TmValue > 80) %>% 
 ggplot(mapping = aes(x = Gene, y = Ct)) + 
   geom_point()+
   facet_wrap(~Bacteria)+
   theme(axis.text.x = element_text(angle = 90))
 ```
 
+```{r}
+rbindtidy %>% filter(TmValue > 80) %>% 
+ggplot(mapping = aes(x = Gene, y = Ct)) + 
+  geom_point()+
+  facet_wrap(~Bacteria)+
+  theme(axis.text.x = element_text(angle = 90))
+```
 
+```{r}
+write.csv(rbindtidy,"WT_ybeX_RTqPCR_repadded.csv", row.names = FALSE)
+```
+
+```{r}
+tidydatarep <- read.csv("WT_ybeX_RTqPCR_repadded.csv")
+```
+
+```{r}
+ggplot(data = tidydatarep, mapping = aes(x = Gene, y = Ct)) + 
+  geom_point(aes(color=PurifRep))+
+  facet_grid(Bacteria~BioRep)+
+  theme(axis.text.x = element_text(angle = 90))
+```
 
