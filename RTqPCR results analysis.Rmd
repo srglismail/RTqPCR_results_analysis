@@ -991,3 +991,156 @@ ggplot(data = tidydatarep, mapping = aes(x = Gene, y = Ct)) +
   theme(axis.text.x = element_text(angle = 90))
 ```
 
+```{r}
+ggplot(data = tidydatarep)+
+  geom_boxplot(aes(Bacteria, Ct))+
+facet_wrap(~Gene, 4)
+```
+"corA"  "cysG"  "frr"   "gyrA"  "hcaT"  "idnT"  "Lnt2"  "Lnt"   "miaB"  "ybeX"  "ybeY" 
+"ybeZ"  "ybeZY"
+
+```{r}
+tidydatarep %>% filter(Gene ==  "CorA") %>% 
+ggplot(aes(Bacteria, Ct))+
+  geom_point(aes(color= TDate))+
+facet_wrap(~Gene, 4)
+```
+
+```{r}
+library(brms)
+```
+
+```{r}
+get_prior(bf(Ct~Gene:Bacteria, sigma~Gene:Bacteria), family = student(), data=tidydatarep)
+```
+
+
+
+m1 <- brm(bf(Ct~Gene:Bacteria, sigma~Gene:Bacteria), 
+          family = student(), 
+          prior=prior(normal(0,10), class="b"), 
+          chains = 3, cores = 3, 
+          data=tidydatarep, 
+          file = "m1.fit")
+          
+
+
+
+conditional_effects(m1, effects = "Gene:Bacteria" )
+
+
+m2 <- brm(Ct~Gene:Bacteria, 
+          family = student(), 
+          data=tidydatarep, 
+          prior=prior(normal(0,10), class="b"), 
+          chains = 3, cores = 3,
+          file = "m2")
+add_criterion(m2, "loo")
+
+
+
+
+conditional_effects(m2, effects = "Gene:Bacteria" )
+
+
+
+m2p <- as_draws_array(m2)
+posterior::summarize_draws(m2p)
+m2p1 <- m2p[,-c(1, 27:30)]
+m2p2 <- m2p1 + m2p[,1]
+
+names(m2p2)
+
+
+```{r}
+unique(tidydatarep$TDate)
+```
+
+Df6dataset <- filter(Df6dataset, !(SamP %in% c("B23")))
+
+
+```{r}
+a <- tidydatarep %>% drop_na(Ct) %>% 
+  filter(!(TDate %in% c("2020-07-17", "2020-07-18"))) %>% 
+  group_by(TDate, Gene, Bacteria) %>% summarise(mean = mean(Ct), n = n()) %>% group_by(Bacteria, Gene) %>% summarise(mean = mean(mean), n = n()) %>% mutate(col1 ="1")
+
+b <- tidydatarep %>% drop_na(Ct) %>% 
+  group_by(TDate, Gene, Bacteria) %>% summarise(mean = mean(Ct), n = n()) %>% group_by(Bacteria, Gene) %>% summarise(mean = mean(mean), n = n()) %>%  mutate(col1 ="2")
+
+bindtable <- rbind(a,b)
+
+library(writexl)
+write_xlsx(bindtable,"fileCt.xlsx")
+```
+
+## ybeY
+∆∆Ct = ∆Ct (X_treated sample) – ∆Ct (WT_untreated sample)
+
+∆Ct = Ct (gene of interest) – Ct (housekeeping gene)
+
+
+str:WT, gene: ybeY house: CorA
+
+delta_wt_corA_y <- m5p$`b_BacteriaWT:GeneybeY` - m5p$`b_BacteriaWT:GeneCorA`
+delta_X_corA_y <- m5p$`b_BacteriaybeX:GeneybeY` - m5p$`b_BacteriaybeX:GeneCorA`
+dd_corA_y <- delta_X_corA_y - delta_wt_corA_y
+
+posterior_summary(2^(-dd_corA_y))
+
+
+WT
+corA 21.61115 23.18646
+cysG 20.87202 22.43801
+ybeX 
+corA 21.39856 21.39856
+cysG 21.54056 21.54056
+
+2^(-((21.39856-21.54056)-(23.18646-22.43801)))
+
+WT
+ybeY 24.26922 24.24529
+cysG 20.87202 22.43801
+
+ybeX
+ybeY 22.31870 22.31870	
+cysG 21.54056 21.54056
+
+2^(-((22.31870-21.54056)-(24.24529-22.43801)))
+
+
+
+
+```{r}
+tidydatarep %>% filter(Gene== c("cysG", "gyrA"), Bacteria == "ybeX")
+```
+
+```{r}
+tidydatarep %>% drop_na(Ct) %>% filter(!(TDate %in% c("2020-07-17", "2020-07-18"))) %>% 
+  group_by(TDate, Gene, Bacteria) %>% filter(Bacteria== "WT") %>%  
+  summarise(mean = mean(Ct), n = n()) %>% group_by(Bacteria, Gene) %>% summarise(mean = mean(mean), n = n()) %>% 
+  ggplot(mapping=aes(Gene, mean, color= Bacteria))+
+  geom_point(aes(color= Bacteria))
+
+```
+
+```{r}
+tidydatarep %>% drop_na(Ct) %>% filter(!(TDate %in% c("2020-07-17", "2020-07-18"))) %>% 
+  group_by(TDate, Gene, Bacteria) %>% filter(Bacteria== "WT") %>%  
+  summarise(mean = mean(Ct), n = n()) %>% group_by(Bacteria, Gene) %>% summarise(mean = mean(mean), n = n())
+```
+
+
+```{r}
+tidydatarep %>% drop_na(Ct)  %>% filter(!(TDate %in% c("2020-07-17", "2020-07-18"))) %>% 
+  group_by(TDate, Gene, Bacteria, BioRep) %>% summarise(mean = mean(Ct), n = n()) %>% filter(Bacteria== "WT") %>%   ggplot(mapping=aes(Gene, mean))+
+  geom_point(aes(color= TDate), size=2)+ facet_wrap(~BioRep)
+```
+
+```{r}
+tidydatarep %>% drop_na(Ct) %>% 
+  group_by(TDate, Gene, Bacteria) %>% summarise(mean = mean(Ct), n = n()) %>% filter(Bacteria== "ybeX") %>%   ggplot(mapping=aes(Gene, mean))+
+  geom_point(aes(color= TDate), size=2)
+```
+
+
+
